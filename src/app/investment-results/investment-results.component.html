@@ -1,13 +1,13 @@
 @if (data) {
   <table>
     <thead>
-    <tr>
-      <th>Year</th>
-      <th>Investment Value</th>
-      <th>Interest (Year)</th>
-      <th>Total Interest</th>
-      <th>Invested Capital</th>
-    </tr>
+      <tr>
+        <th>Year</th>
+        <th>Investment Value</th>
+        <th>Interest (Year)</th>
+        <th>Total Interest</th>
+        <th>Invested Capital</th>
+      </tr>
     </thead>
     <tbody>
       @for (row of data; track row) {
@@ -16,14 +16,11 @@
           <th>{{ row.valueEndOfYear | currency }}</th>
           <th>{{ row.interest | currency }}</th>
           <th>{{ row.totalInterest | currency }}</th>
-          <th>{{ row.totalAmountInvested  | currency }}</th>
+          <th>{{ row.totalAmountInvested | currency }}</th>
         </tr>
       }
-
     </tbody>
   </table>
 } @else {
   <p>Please enter some values and press "Calculate".</p>
 }
-
-
