@@ -1,22 +1,29 @@
-<p>Please enter some values and press "Calculate".</p>
+@if (data) {
+  <table>
+    <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (row of data; track row) {
+        <tr>
+          <th>{{ row.year }}</th>
+          <th>{{ row.valueEndOfYear }}</th>
+          <th>{{ row.interest }}</th>
+          <th>{{ row.totalInterest }}</th>
+          <th>{{ row.totalAmountInvested }}</th>
+        </tr>
+      }
 
-<table>
-  <thead>
-  <tr>
-    <th>Year</th>
-    <th>Investment Value</th>
-    <th>Interest (Year)</th>
-    <th>Total Interest</th>
-    <th>Invested Capital</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
-    <th>5</th>
-  </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+} @else {
+  <p>Please enter some values and press "Calculate".</p>
+}
+
+
