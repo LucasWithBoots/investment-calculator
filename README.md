@@ -1,6 +1,7 @@
 # Investment Calculator
 
 ![Minhas habilidades](https://skillicons.dev/icons?i=ts,angular,idea)
+
 ![img.png](src/assets/print_projeto.png)
 
 ## Sobre o Projeto
