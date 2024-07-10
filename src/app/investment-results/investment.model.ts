@@ -5,7 +5,7 @@ export interface Investment {
   duration: number
 }
 
-export interface InvestmentRow {
+export interface InvestmentResult {
   annualInvestment: number
   interest: number
   totalAmountInvested: number

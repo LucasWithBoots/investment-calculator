@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {InvestmentResultsService} from "../investment-results/investment-results.service";
+import {InvestmentResult} from "../investment-results/investment.model";
 
 @Component({
   selector: 'app-user-input',
@@ -13,6 +14,7 @@ import {InvestmentResultsService} from "../investment-results/investment-results
   styleUrl: './user-input.component.scss'
 })
 export class UserInputComponent {
+  @Output() send = new EventEmitter<InvestmentResult[]>();
   enteredInitialInvestment!: number;
   enteredAnnualInvestment!: number;
   enteredExpectedReturn!: number;
@@ -22,7 +24,7 @@ export class UserInputComponent {
   }
 
   onSubmit() {
-    this.investmentResultsService.calculateInvestimentResults(
+    let results = this.investmentResultsService.calculateInvestimentResults(
       {
         initialInvestment: this.enteredInitialInvestment,
         annualInvestment: this.enteredAnnualInvestment,
@@ -30,5 +32,7 @@ export class UserInputComponent {
         duration: this.enteredDuration,
       }
     )
+
+    this.send.emit(results)
   }
 }
