@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InvestmentResultsService } from '../investment-results/investment-results.service';
-import { InvestmentResult } from '../investment-results/investment.model';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {InvestmentResultsService} from '../investment-results/investment-results.service';
+import {InvestmentResult} from '../investment-results/investment.model';
 
 @Component({
   selector: 'app-user-input',
@@ -12,12 +12,13 @@ import { InvestmentResult } from '../investment-results/investment.model';
 })
 export class UserInputComponent {
   @Output() send = new EventEmitter<InvestmentResult[]>();
-  enteredInitialInvestment!: number;
-  enteredAnnualInvestment!: number;
-  enteredExpectedReturn!: number;
-  enteredDuration!: number;
+  enteredInitialInvestment: number = 1000;
+  enteredAnnualInvestment: number = 200;
+  enteredExpectedReturn: number = 5;
+  enteredDuration: number = 10;
 
-  constructor(private investmentResultsService: InvestmentResultsService) {}
+  constructor(private investmentResultsService: InvestmentResultsService) {
+  }
 
   onSubmit() {
     let results = this.investmentResultsService.calculateInvestimentResults({
