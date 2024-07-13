@@ -25,7 +25,7 @@ Investment Calculator é uma aplicação desenvolvida em Angular TS. Este projet
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/investment-calculator.git
+    git clone https://github.com/LucasWithBoots/investment-calculator.git
     ```
 2. Navegue até o diretório do projeto:
     ```bash
